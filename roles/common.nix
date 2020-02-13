@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = import ../modules;
+
   home.packages = with pkgs; [
     weechat file
     tig subversion fd ripgrep
