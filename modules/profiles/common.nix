@@ -61,7 +61,11 @@
 
   programs.vim = {
     enable = true;
-    plugins = [ pkgs.vimPlugins.vim-plug ];
+    plugins = with pkgs.vimPlugins; [
+      my-vim
+      rust-vim
+      vim-nix
+    ];
     extraConfig = ''
       set nocompatible
       set ruler
@@ -79,13 +83,6 @@
 
       set hlsearch
       colorscheme torte
-
-      call plug#begin()
-      Plug 'crabtw/my.vim'
-      Plug 'rust-lang/rust.vim'
-      Plug 'FStarLang/VimFStar'
-      Plug 'LnL7/vim-nix'
-      call plug#end()
 
       syntax on
     '';
