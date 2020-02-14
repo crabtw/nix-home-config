@@ -18,7 +18,7 @@ Add imports to `home.nix`
 ```nix
 {
   imports = [
-    ./roles/server.nix
+    ./modules/profiles/server.nix
   ]; 
 }
 ```

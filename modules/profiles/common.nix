@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = import ../modules;
+  imports = [
+    ../services/today-books.nix
+  ];
 
   home.packages = with pkgs; [
     weechat file
