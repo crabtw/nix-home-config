@@ -18,6 +18,8 @@ in
     haskellPackages.xmobar
     ranger atool
 
+    fcitx-engines.chewing
+
     # fonts
     myFCConf
 
@@ -44,6 +46,14 @@ in
     enable = true;
     enableContribAndExtras = true;
     config = ./src/xmonad.hs;
+  };
+
+  programs.firefox = {
+    enable = true;
+    profiles.default.settings = {
+      "browser.tabs.insertRelatedAfterCurrent" = false;
+      "security.certerrors.mitm.auto_enable_enterprise_roots" = false;
+    };
   };
 
   programs.urxvt = {
