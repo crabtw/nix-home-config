@@ -2,13 +2,9 @@ self: super:
 
 {
   haskellPackages = super.haskellPackages.override {
-    overrides =
-      let
-        inherit (super) fetchFromGitHub;
-      in
-        self: super: {
-          wawabook = self.callPackage ../pkgs/wawabook.nix {};
-        };
+    overrides = self: super: {
+      wawabook = self.callPackage ../pkgs/wawabook.nix {};
+    };
   };
 
   vimPlugins = super.vimPlugins // (
