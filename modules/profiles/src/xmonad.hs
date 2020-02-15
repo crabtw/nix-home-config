@@ -27,7 +27,9 @@ myKeys x = M.union (newKeys x) (keys def x)
             , ((modMask x, xK_p), spawn "dmenu_run")
             ]
 
-myManageHook = manageDocks
+myManageHook = manageHook def <+> manageDocks
+
+myHandleEventHook = handleEventHook def <+> docksEventHook
 
 main = do xmobar <- spawnPipe "xmobar"
           xmonad $ def {
@@ -36,5 +38,6 @@ main = do xmobar <- spawnPipe "xmobar"
             keys = myKeys,
             modMask = mod4Mask,
             manageHook = myManageHook,
+            handleEventHook = myHandleEventHook,
             terminal = "urxvt"
           }

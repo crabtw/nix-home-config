@@ -15,10 +15,16 @@ in
   ];
 
   home.packages = with pkgs; [
+    # X11
     haskellPackages.xmobar
-    ranger atool
+    xsel
+    pcmanx-gtk2
 
-    fcitx-engines.chewing
+    # utils
+    ranger
+    atool
+    unzip
+    cmus
 
     # fonts
     myFCConf
@@ -32,7 +38,6 @@ in
     wqy_microhei
     wqy_unibit
     ipafont
-    ipaexfont
 
     inconsolata
     dejavu_fonts
@@ -63,11 +68,13 @@ in
     fonts = [
       "xft:Inconsolata:pixelsize=16"
       "xft:AR PL New Sung Mono:pixelsize=16"
-      "xft:IPAexGothic:pixelsize=16"
+      "xft:IPAGothic:pixelsize=16"
       "xft:DejaVu Sans Mono:pixelsize=16"
       "xft:FreeMono:pixelsize=16"
     ];
     extraConfig = {
+      "background" = "black";
+      "foreground" = "lightgray";
       "color12" = "#6464ff";
     };
   };
@@ -154,7 +161,7 @@ in
     export XMODIFIERS="@im=fcitx"
     export GTK_IM_MODULE="fcitx"
     export QT_IM_MODULE="fcitx"
-    ${pkgs.fcitx}/bin/fcitx -d -r
+    fcitx -d -r
 
     # common
     ${pkgs.xorg.xrdb}/bin/xrdb -merge $HOME/.Xresources
@@ -185,17 +192,20 @@ in
       --subst-var-by ruby "${pkgs.ruby}"
   '';
 
-  xdg.configFile."ranger".source = pkgs.runCommandLocal "ranger-config" {} ''
-    install -Dm644 ${./src/ranger/commands.py} $out/commands.py
-    ${pkgs.ranger}/bin/ranger --confdir=$out --copy-config=rifle
+  xdg.configFile."ranger/commands.py".source = pkgs.runCommandLocal "ranger-config-command.py" {} ''
+    install -m644 ${./src/ranger/commands.py} $out
 
-    substituteInPlace $out/commands.py \
+    substituteInPlace $out \
       --subst-var-by atool "${pkgs.atool}" \
       --subst-var-by ffmpeg "${pkgs.ffmpeg}" \
       --subst-var-by mplayer "${pkgs.mplayer}"
+  '';
+
+  xdg.configFile."ranger/rifle.conf".source = pkgs.runCommandLocal "ranger-config-rifle.conf" {} ''
+    install -m644 ${pkgs.ranger}/share/doc/ranger/config/rifle.conf $out
 
     sed -E -i \
       -e '/^mime[ ]+\^image,[ ]+has[ ]+feh,/ { s/feh( --)?/feh_rifle/g }' \
-      $out/rifle.conf
+      $out
   '';
 }

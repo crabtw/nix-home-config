@@ -6,9 +6,15 @@
   ];
 
   home.packages = with pkgs; [
-    weechat file
-    tig subversion fd ripgrep
-    ruby cabal2nix
+    file
+    pstree
+    tig
+    subversion
+    fd
+    ripgrep
+    ruby
+    cabal2nix
+    weechat
   ];
 
   home.sessionVariables = {
