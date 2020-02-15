@@ -3,6 +3,7 @@
 {
   imports = [
     ../services/today-books.nix
+    ./config/terminfo
   ];
 
   home.packages = with pkgs; [
@@ -16,14 +17,6 @@
     cabal2nix
     weechat
   ];
-
-  home.sessionVariables = {
-    PATH = "$HOME/bin:$PATH";
-    EDITOR = "vim";
-    TERMINFO = pkgs.runCommandLocal "terminfo" {} ''
-      ${pkgs.ncurses}/bin/tic -o $out ${./src/terminfo.src}
-    '';
-  };
 
   accounts.email.accounts.gmail = {
     primary = true;
@@ -93,4 +86,6 @@
       syntax on
     '';
   };
+
+  home.sessionVariables.EDITOR = "vim";
 }
