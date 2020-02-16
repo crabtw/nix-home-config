@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     ranger
     atool
-    unzip
   ];
 
   xdg.configFile."ranger/commands.py".source = pkgs.runCommandLocal "ranger-config-command.py" {} ''

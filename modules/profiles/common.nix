@@ -8,6 +8,8 @@
 
   home.packages = with pkgs; [
     file
+    zip
+    unzip
     pstree
     tig
     subversion

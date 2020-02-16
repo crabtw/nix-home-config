@@ -3,9 +3,8 @@
 let
 
   myConf = pkgs.runCommandLocal "my-fontconfig-conf" {} ''
-    mkdir -p $out/etc/fonts/conf.d
-    ln -s ${./10-my-rendering.conf} $out/etc/fonts/conf.d/10-my-rendering.conf
-    ln -s ${./52-my-default-fonts.conf} $out/etc/fonts/conf.d/52-my-default-fonts.conf
+    mkdir -p $out/etc/fonts
+    ln -s ${./conf.d} $out/etc/fonts/conf.d
   '';
 
 in
@@ -23,11 +22,13 @@ in
     wqy_microhei
     wqy_unibit
     ipafont
+    ipaexfont
 
-    inconsolata
     dejavu_fonts
     freefont_ttf
     liberation_ttf
+
+    inconsolata
   ];
 
   fonts.fontconfig.enable = true;

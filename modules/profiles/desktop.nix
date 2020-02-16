@@ -23,6 +23,7 @@
     enable = true;
     profiles.default.settings = {
       "browser.tabs.insertRelatedAfterCurrent" = false;
+      "browser.link.open_newwindow.restriction" = 0;
       "security.certerrors.mitm.auto_enable_enterprise_roots" = false;
     };
   };
@@ -32,9 +33,9 @@
     scroll.bar.enable = false;
     iso14755 = false;
     fonts = [
-      "xft:Inconsolata:pixelsize=16"
+      "xft:Inconsolata:pixelsize=17"
       "xft:AR PL New Sung Mono:pixelsize=16"
-      "xft:IPAGothic:pixelsize=16"
+      "xft:IPAexGothic:pixelsize=16"
       "xft:DejaVu Sans Mono:pixelsize=16"
       "xft:FreeMono:pixelsize=16"
     ];
