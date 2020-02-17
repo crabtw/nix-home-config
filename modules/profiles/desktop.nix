@@ -17,6 +17,8 @@
 
     # utils
     cmus
+    llpp
+    imagemagick
   ];
 
   programs.firefox = {
@@ -27,6 +29,8 @@
       "security.certerrors.mitm.auto_enable_enterprise_roots" = false;
     };
   };
+
+  programs.chromium.enable = true;
 
   programs.urxvt = {
     enable = true;

@@ -7,16 +7,23 @@
   ];
 
   home.packages = with pkgs; [
+    # utils
     file
     zip
     unzip
     pstree
-    tig
-    subversion
+    lsof
     fd
     ripgrep
+    inetutils
+
+    # dev
+    tig
+    subversion
     ruby
     cabal2nix
+
+    # misc
     weechat
   ];
 
