@@ -20,6 +20,8 @@
   programs.tmux.extraConfig =  ''
     new  -n irc
     neww -n wawabook -c ~/db/wawabook
+    neww -n nix-home-config -c ~/src/nix-home-config
+    neww -n nix-system-config -c ~/src/nix-system-config
     neww -n ats-xanadu -c ~/src/ATS-Xanadu/
     neww -n rust -c ~/src/rust/
     neww -n ocaml -c ~/src/ocaml/

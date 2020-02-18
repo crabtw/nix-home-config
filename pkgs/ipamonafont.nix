@@ -1,4 +1,4 @@
-{ lib, fetchzip }:
+{ fetchzip }:
 
 let
 
@@ -8,7 +8,7 @@ let
 
 in
 
-fetchzip rec {
+fetchzip {
   name = "${pname}-${version}";
 
   url = "https://web.archive.org/web/20190326123924/http://www.geocities.jp/ipa_mona/opfc-ModuleHP-1.1.1_withIPAMonaFonts-${version}.tar.gz";

@@ -1,4 +1,4 @@
-{ lib, fetchzip }:
+{ fetchzip }:
 
 fetchzip rec {
   name = "wqy-unibit-bdf-1.1.0-1";
