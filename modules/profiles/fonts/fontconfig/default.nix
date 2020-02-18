@@ -19,6 +19,7 @@ in
     noto-fonts-cjk
     noto-fonts-emoji
     noto-fonts-extra
+    noto-fonts-serif-cjk
 
     opendesktop-fonts
     wqy_microhei
