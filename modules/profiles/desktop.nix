@@ -5,7 +5,6 @@
     ./common.nix
     ./programs/ranger
     ./misc/home-bin
-    ./fonts/fontconfig
     ./services/xsession
   ];
 
