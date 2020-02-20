@@ -10,9 +10,9 @@
     install -m644 ${./commands.py} $out
 
     substituteInPlace $out \
-      --subst-var-by atool "${pkgs.atool}" \
-      --subst-var-by ffmpeg "${pkgs.ffmpeg}" \
-      --subst-var-by mplayer "${pkgs.mplayer}"
+      --replace aunpack "${pkgs.atool}/bin/aunpack" \
+      --replace ffmpeg "${pkgs.ffmpeg}/bin/ffmpeg" \
+      --replace mencoder "${pkgs.mplayer}/bin/mencoder"
   '';
 
   xdg.configFile."ranger/rifle.conf".source = pkgs.runCommandLocal "ranger-config-rifle.conf" {} ''

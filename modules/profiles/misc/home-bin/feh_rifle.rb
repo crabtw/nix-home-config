@@ -1,4 +1,4 @@
-#!@ruby@/bin/ruby
+#!/usr/bin/env ruby
 
 def nat_ord s
   s.split(/(\d+)|(\D+)/).select {|c| c != ''}.map do |c|
@@ -38,5 +38,5 @@ if __FILE__ == $0
     f =~ /\.(jpe?g|png|bmp|gif)$/i
   end.sort_by {|f| nat_ord f}
 
-  exec '@feh@/bin/feh', '--start-at', file, '-F', '-Y', *all
+  exec 'feh', '--start-at', file, '-F', '-Y', *all
 end

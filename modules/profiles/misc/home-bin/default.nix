@@ -7,31 +7,31 @@
     install -m755 ${./dmenu_run.sh} $out
 
     substituteInPlace $out \
-      --subst-var-by runtimeShell "${pkgs.runtimeShell}" \
-      --subst-var-by util-linux "${pkgs.utillinux}" \
-      --subst-var-by dmenu "${pkgs.dmenu}"
+      --replace /bin/sh "${pkgs.runtimeShell}" \
+      --replace setsid "${pkgs.utillinux}/bin/setsid" \
+      --replace dmenu "${pkgs.dmenu}/bin/dmenu"
   '';
 
   home.file."bin/feh_rifle".source = pkgs.runCommandLocal "home-bin-feh_rifle.rb" {} ''
     install -m755 ${./feh_rifle.rb} $out
 
     substituteInPlace $out \
-      --subst-var-by ruby "${pkgs.ruby}" \
-      --subst-var-by feh "${pkgs.feh}"
+      --replace "/usr/bin/env ruby" "${pkgs.ruby}/bin/ruby" \
+      --replace feh "${pkgs.feh}/bin/feh"
   '';
 
   home.file."bin/seq-rename".source = pkgs.runCommandLocal "home-bin-seq-rename.rb" {} ''
     install -m755 ${./seq-rename.rb} $out
 
     substituteInPlace $out \
-      --subst-var-by ruby "${pkgs.ruby}"
+      --replace "/usr/bin/env ruby" "${pkgs.ruby}/bin/ruby"
   '';
 
   home.file."bin/chperm".source = pkgs.runCommandLocal "home-bin-chperm.rb" {} ''
     install -m755 ${./chperm.rb} $out
 
     substituteInPlace $out \
-      --subst-var-by ruby "${pkgs.ruby}"
+      --replace "/usr/bin/env ruby" "${pkgs.ruby}/bin/ruby"
   '';
 
   home.file."bin/comicdb".source =
@@ -42,7 +42,7 @@
         install -m755 ${./comicdb.rb} $out
 
         substituteInPlace $out \
-          --subst-var-by ruby "${ruby}"
+          --replace "/usr/bin/env ruby" "${ruby}/bin/ruby"
       '';
 
   home.file."bin/comicdb-sh" = {

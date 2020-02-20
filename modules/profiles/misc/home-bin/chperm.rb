@@ -1,4 +1,4 @@
-#!@ruby@/bin/ruby
+#!/usr/bin/env ruby
 
 require 'fileutils'
 require 'pathname'
