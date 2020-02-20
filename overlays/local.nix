@@ -1,9 +1,22 @@
 self: super:
 
+let
+
+  pkgs = super.pkgs;
+
+  lib = super.lib;
+
+in
+
 {
   haskellPackages = super.haskellPackages.override {
     overrides = self: super: {
       wawabook = self.callPackage ../pkgs/wawabook.nix {};
+
+      gipeda = self.callPackage ../pkgs/gipeda.nix {
+        makeBinPath = lib.makeBinPath;
+        allPkgs = pkgs;
+      };
     };
   };
 
@@ -18,5 +31,4 @@ self: super:
         };
       }
   );
-
 }
