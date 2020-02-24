@@ -49,7 +49,7 @@
     executable = true;
     text = ''
       #!${pkgs.runtimeShell}
-      
+
       while true; do
           printf ">> "
           if read x; then
@@ -57,13 +57,13 @@
           else
               exit
           fi
-      
+
           x=`echo $x | sed -r 's/^\s+|\s+$//'`
-      
+
           if [[ -z "$x" ]]; then
               continue
           fi
-      
+
           comicdb "$x"
       done
     '';

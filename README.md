@@ -19,7 +19,7 @@ Add imports to `home.nix`
 {
   imports = [
     ./modules/profiles/server.nix
-  ]; 
+  ];
 }
 ```
 

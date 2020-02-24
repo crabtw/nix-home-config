@@ -102,21 +102,21 @@ def query_comic db, name
   q = '%' + name + '%'
   qs = {
     'manga' => [
-      'select a.name1, b.name, b.page, b.size, s.name from ' + 
+      'select a.name1, b.name, b.page, b.size, s.name from ' +
       '(select * from author,manga where (name1 like ? or name2 like ? or name3 like ?) and id=author) as a left join (book as b, status as s) on ' +
       'a.book=b.id and b.status=s.id ' +
       'union ' +
-      'select a.name1, b.name, b.page, b.size, s.name from ' + 
+      'select a.name1, b.name, b.page, b.size, s.name from ' +
       '(select * from book,manga where name like ? and id=book) as b left join (author as a, status as s) on ' +
       'b.author=a.id and b.status=s.id ',
       q, q, q, q
     ],
     'doujinshi' => [
-      'select c.name, b.name, b.page, b.size, s.name from ' + 
+      'select c.name, b.name, b.page, b.size, s.name from ' +
       '(select * from circle,doujinshi where name like ? and id=circle) as c left join (book as b, status as s) on ' +
       'c.book=b.id and b.status=s.id ' +
       'union ' +
-      'select c.name, b.name, b.page, b.size, s.name from ' + 
+      'select c.name, b.name, b.page, b.size, s.name from ' +
       '(select * from book,doujinshi where name like ? and id=book) as b left join (circle as c, status as s) on ' +
       'b.circle=c.id and b.status=s.id ',
       q, q
