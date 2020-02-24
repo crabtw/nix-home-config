@@ -31,4 +31,6 @@ in
         };
       }
   );
+
+  vmware-horizon-client = super.callPackage ../pkgs/vmware-horizon-client.nix {};
 }

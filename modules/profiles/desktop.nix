@@ -13,6 +13,7 @@
     xsel
     pcmanx-gtk2
     xorg.xdpyinfo
+    vmware-horizon-client
 
     # utils
     cmus

@@ -22,6 +22,7 @@
     subversion
     ruby
     cabal2nix
+    nixfmt
 
     # misc
     weechat
