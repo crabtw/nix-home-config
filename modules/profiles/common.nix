@@ -21,7 +21,6 @@
     tig
     subversion
     ruby
-    cabal2nix
     shellcheck
 
     # misc
