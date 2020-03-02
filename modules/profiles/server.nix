@@ -31,7 +31,7 @@
     neww -n fstar -c ~/src/FStar
     neww -n z3 -c ~/src/z3
     neww -n ghc -c ~/src/ghc
-    neww -n cranelift -c ~/src/cranelift
+    neww -n wasmtime -c ~/src/wasmtime
     neww -n compcert -c ~/src/CompCert
     neww -n sail -c ~/src/sail
     neww -n grin -c ~/src/grin
