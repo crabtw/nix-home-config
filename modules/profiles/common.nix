@@ -22,7 +22,7 @@
     subversion
     ruby
     cabal2nix
-    nixfmt
+    shellcheck
 
     # misc
     weechat

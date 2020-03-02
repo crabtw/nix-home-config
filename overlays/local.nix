@@ -10,13 +10,10 @@ in
 
 {
   haskellPackages = super.haskellPackages.override {
-    overrides = self: super: {
-      wawabook = self.callPackage ../pkgs/wawabook.nix {};
-
-      gipeda = self.callPackage ../pkgs/gipeda.nix {
-        makeBinPath = lib.makeBinPath;
-        allPkgs = pkgs;
-      };
+    overrides = self: super: import ../pkgs/haskell-packages.nix {
+      pkgs = pkgs;
+      stdenv = pkgs.stdenv;
+      callPackage = self.callPackage;
     };
   };
 

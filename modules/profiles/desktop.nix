@@ -19,6 +19,7 @@
     cmus
     llpp
     imagemagick
+    ffmpeg
   ];
 
   programs.firefox = {
