@@ -14,6 +14,7 @@ in
       pkgs = pkgs;
       stdenv = pkgs.stdenv;
       callPackage = self.callPackage;
+      hsPkgs = super;
     };
   };
 
