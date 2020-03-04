@@ -96,5 +96,9 @@
     '';
   };
 
+  programs.direnv.enable = true;
+
+  services.lorri.enable = true;
+
   home.sessionVariables.EDITOR = "vim";
 }
