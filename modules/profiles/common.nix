@@ -22,9 +22,6 @@
     subversion
     ruby
     shellcheck
-
-    # misc
-    weechat
   ];
 
   accounts.email.accounts.gmail = {

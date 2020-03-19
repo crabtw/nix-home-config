@@ -22,11 +22,12 @@
     neww -n wawabook -c ~/db/wawabook
     neww -n nix-home-config -c ~/src/nix-home-config
     neww -n nix-system-config -c ~/src/nix-system-config
+    neww -n nixpkgs -c ~/src/nixpkgs
     neww -n ats-xanadu -c ~/src/ATS-Xanadu/
     neww -n rust -c ~/src/rust/
     neww -n ocaml -c ~/src/ocaml/
     neww -n idris2 -c ~/src/Idris2/
-    neww -n libstdc++ -c ~/src/libstdc++-v3
+    neww -n gcc -c ~/src/gcc
     neww -n llvm -c ~/src/llvm-project
     neww -n fstar -c ~/src/FStar
     neww -n z3 -c ~/src/z3
