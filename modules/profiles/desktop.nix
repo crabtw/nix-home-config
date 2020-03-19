@@ -20,6 +20,9 @@
     llpp
     imagemagick
     ffmpeg
+    abcde
+    unrar
+    p7zip
   ];
 
   programs.firefox = {
