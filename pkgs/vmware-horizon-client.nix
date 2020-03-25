@@ -3,11 +3,11 @@
 
 let
 
-  version = "5.3.0";
+  version = "5.4.0";
 
-  build = "15208949";
+  build = "15805449";
 
-  cart = "CART20FQ4";
+  cart = "CART21FQ1";
 
   meta = {
     license = stdenv.lib.licenses.unfree;
@@ -20,7 +20,7 @@ let
   vmwareBundle64 = fetchurl {
     url =
       "https://download3.vmware.com/software/view/viewclients/${cart}/VMware-Horizon-Client-${version}-${build}.x64.bundle";
-    sha256 = "0lrj7p2ia5awiljdk0s9mjy9mqzj42fgsncgq8rp4ihd89gqsajg";
+    sha256 = "0bda4m9d5fi0nv7r7zqcs2pkgpmiwlhfb07wb036xgwhh59ijqb2";
   };
 
   vmwareBundleUnpacker = fetchurl {
