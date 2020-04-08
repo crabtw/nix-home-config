@@ -11,7 +11,7 @@
     config = ./xmonad.hs;
   };
 
-  home.file.".xmobarrc".text = ''
+  xdg.configFile."xmobar/xmobarrc".text = ''
     Config {
         font = "xft:Unibit",
         bgColor = "black",
@@ -35,6 +35,12 @@
     export XMODIFIERS="@im=fcitx"
     export GTK_IM_MODULE="fcitx"
     export QT_IM_MODULE="fcitx"
+
+    if test -z "$DBUS_SESSION_BUS_ID"; then
+      eval `dbus-launch --sh-syntax --exit-with-x11`
+      export DBUS_SESSION_BUS_ID
+    fi
+
     fcitx -d -r
 
     # common
