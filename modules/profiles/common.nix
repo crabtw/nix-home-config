@@ -4,6 +4,7 @@
   imports = [
     ../services/today-books.nix
     ./config/terminfo
+    ./programs/direnv
   ];
 
   home.packages = with pkgs; [
@@ -92,10 +93,6 @@
       syntax on
     '';
   };
-
-  programs.direnv.enable = true;
-
-  services.lorri.enable = true;
 
   home.sessionVariables.EDITOR = "vim";
 }
