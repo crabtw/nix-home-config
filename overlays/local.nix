@@ -31,4 +31,10 @@ in
   );
 
   vmware-horizon-client = super.callPackage ../pkgs/vmware-horizon-client.nix {};
+
+  tig = super.tig.overrideAttrs (old: {
+    installPhase = old.installPhase + ''
+      ln -s ${self.git}/share/bash-completion/completions/git $out/etc/bash_completion.d/
+    '';
+  });
 }
