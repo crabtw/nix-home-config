@@ -1,4 +1,4 @@
-builtins.fetchGit {
+import (builtins.fetchGit {
   url = "https://github.com/nix-community/nix-direnv.git";
-  rev = "97ed44cc736df092a40276567ebd0559c193b05d";
-}
+  rev = "f8da3dcb49c1459de8bb300cac10f06a5add5d9b";
+})

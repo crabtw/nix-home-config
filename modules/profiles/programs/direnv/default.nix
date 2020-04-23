@@ -1,8 +1,8 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 let
 
-  nix-direnv = import ./nix-direnv.nix;
+  nix-direnv = import ./nix-direnv.nix { pkgs = pkgs; };
 
 in
 
@@ -10,6 +10,6 @@ in
   programs.direnv.enable = true;
 
   xdg.configFile."direnv/direnvrc".text = ''
-    source ${nix-direnv}/direnvrc
+    source ${nix-direnv}/share/nix-direnv/direnvrc
   '';
 }
