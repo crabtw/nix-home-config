@@ -36,6 +36,7 @@
     neww -n compcert -c ~/src/CompCert
     neww -n sail -c ~/src/sail
     neww -n grin -c ~/src/grin
+    neww -n regalloc.rs -c ~/src/regalloc.rs
 
     neww -c ~/
     selectw -t 0

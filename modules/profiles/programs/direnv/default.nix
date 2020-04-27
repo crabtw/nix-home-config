@@ -2,7 +2,7 @@
 
 let
 
-  nix-direnv = import ./nix-direnv.nix { pkgs = pkgs; };
+  nix-direnv = import ./nix-direnv.nix { inherit pkgs; };
 
 in
 
