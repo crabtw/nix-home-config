@@ -63,20 +63,20 @@ let
     '';
 
     installPhase = ''
-            mkdir "$out"
+      mkdir "$out"
 
-            cp -a ./ext-client/bin "$out/"
-            cp -a ./ext-client/lib "$out/"
-            cp -a ./ext-client/share "$out/"
-            cp -a ./ext-pcoip/pcoip/bin "$out/"
-            cp -a ./ext-pcoip/pcoip/lib "$out/"
-            cp -a ./ext-seamless/lib "$out/"
+      cp -a ./ext-client/bin "$out/"
+      cp -a ./ext-client/lib "$out/"
+      cp -a ./ext-client/share "$out/"
+      cp -a ./ext-pcoip/pcoip/bin "$out/"
+      cp -a ./ext-pcoip/pcoip/lib "$out/"
+      cp -a ./ext-seamless/lib "$out/"
 
-            for FILE in $(find "$out" -type f); do
-      	file --mime "$FILE" | egrep -q "(application/x-(pie-)?(executable|sharedlib)|text/x-shellscript)" || continue
-      	chmod +x "$FILE"
-            done
-          '';
+      for FILE in $(find "$out" -type f); do
+        file --mime "$FILE" | egrep -q "(application/x-(pie-)?(executable|sharedlib)|text/x-shellscript)" || continue
+        chmod +x "$FILE"
+      done
+    '';
   };
 
   desktopItem = makeDesktopItem {
