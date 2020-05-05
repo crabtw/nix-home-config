@@ -50,6 +50,7 @@
     aliases = {
       pullall = "!git pull && git submodule sync && git submodule update --init --recursive --progress";
     };
+    delta.enable = true;
   };
 
   programs.mercurial = with config.accounts.email.accounts; {
