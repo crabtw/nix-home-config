@@ -72,6 +72,7 @@
       my-vim
       rust-vim
       vim-nix
+      zig-vim
     ];
     extraConfig = ''
       set nocompatible
