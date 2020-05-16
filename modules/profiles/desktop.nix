@@ -22,6 +22,7 @@
     ffmpeg
     abcde
     unrar
+    tmsu
   ];
 
   programs.firefox = {
