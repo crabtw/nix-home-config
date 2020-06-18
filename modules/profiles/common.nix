@@ -50,6 +50,9 @@
     aliases = {
       pullall = "!git pull && git submodule sync && git submodule update --init --recursive --progress";
     };
+    extraConfig = {
+      pull.rebase = false;
+    };
     delta.enable = true;
   };
 
