@@ -23,6 +23,7 @@
     subversion
     ruby
     shellcheck
+    niv
   ];
 
   accounts.email.accounts.gmail = {
