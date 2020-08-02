@@ -50,7 +50,7 @@
     ${pkgs.trayer}/bin/trayer \
       --edge top --align right --SetDockType true --SetPartialStrut true \
       --expand true --width 10 --transparent true --tint 0x000000 --height 18 &
-    ${pkgs.xorg.xrdb}/bin/xsetroot -cursor_name left_ptr -fg gray -bg black -solid black &
+    ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr -fg gray -bg black -solid black &
     exec ${pkgs.xmonad-with-packages}/bin/xmonad
   '';
 }
