@@ -36,10 +36,12 @@
     export GTK_IM_MODULE="fcitx"
     export QT_IM_MODULE="fcitx"
 
-    if test -z "$DBUS_SESSION_BUS_ID"; then
-      eval `dbus-launch --sh-syntax --exit-with-x11`
-      export DBUS_SESSION_BUS_ID
+    DBUS_ADDR="/run/user/$(id -u)/bus"
+    if ! test -e "$DBUS_ADDR"; then
+      dbus-daemon --session --address="unix:path=$DBUS_ADDR" &
     fi
+    systemctl --user import-environment DISPLAY XAUTHORITY
+    systemctl --user start graphical-session.target
 
     fcitx -d -r
 
