@@ -3,11 +3,13 @@
 
 let
 
-  version = "5.4.1";
+  version = "2006";
 
-  build = "15988340";
+  build1 = "8.0.0";
 
-  cart = "CART21FQ1";
+  build2 = "16522670";
+
+  cart = "CART21FQ2";
 
   meta = {
     license = stdenv.lib.licenses.unfree;
@@ -19,8 +21,8 @@ let
 
   vmwareBundle64 = fetchurl {
     url =
-      "https://download3.vmware.com/software/view/viewclients/${cart}/VMware-Horizon-Client-${version}-${build}.x64.bundle";
-    sha256 = "1lqlik2zzfx0v9sawk35gvp1x2c089zhmrybfi5nmvzsgx0yh5f1";
+      "https://download3.vmware.com/software/view/viewclients/${cart}/VMware-Horizon-Client-${version}-${build1}-${build2}.x64.bundle";
+    sha256 = "1kawm6wwjaajrvmi0wg5wlgjcsmc1x28s40h3715cs9i800kkakp";
   };
 
   vmwareBundleUnpacker = fetchurl {
@@ -68,7 +70,6 @@ let
       cp -a ./ext-client/bin "$out/"
       cp -a ./ext-client/lib "$out/"
       cp -a ./ext-client/share "$out/"
-      cp -a ./ext-pcoip/pcoip/bin "$out/"
       cp -a ./ext-pcoip/pcoip/lib "$out/"
       cp -a ./ext-seamless/lib "$out/"
 
