@@ -22,6 +22,7 @@
     ffmpeg
     abcde
     unrar
+    p7zip
     tmsu
   ];
 
