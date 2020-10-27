@@ -103,7 +103,7 @@
     config = {
       profile = "opengl-hq";
       vo = "gpu";
-      ao = "alsa";
+      ao = "pulse";
       hwdec = "vaapi";
       volume-max = "300";
     };

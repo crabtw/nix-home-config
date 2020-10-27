@@ -17,6 +17,7 @@
     fd
     ripgrep
     inetutils
+    gnupg
 
     # dev
     tig
